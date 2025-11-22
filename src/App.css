@@ -1,0 +1,364 @@
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+} */
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+.wedding-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 20px;
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+  animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.hearts-decoration {
+  margin-bottom: 20px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.heart {
+  font-size: 2rem;
+  color: #ff6b9d;
+  margin: 0 15px;
+  display: inline-block;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+.heart:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.heart:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+
+.wedding-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 4.5rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: fadeInDown 1s ease-out;
+}
+
+.couple-names {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: #ffffff;
+  margin-bottom: 10px;
+  letter-spacing: 3px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  animation: fadeInDown 1s ease-out 0.2s backwards;
+}
+
+.wedding-date {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 50px;
+  font-weight: 300;
+  animation: fadeInDown 1s ease-out 0.4s backwards;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.countdown-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.countdown-box {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px 25px;
+  min-width: 140px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.8s ease-out backwards;
+}
+
+.countdown-box:nth-child(1) {
+  animation-delay: 0.5s;
+}
+
+.countdown-box:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+.countdown-box:nth-child(3) {
+  animation-delay: 0.7s;
+}
+
+.countdown-box:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+.countdown-box:nth-child(5) {
+  animation-delay: 0.9s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.countdown-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+.countdown-box.milliseconds {
+  min-width: 160px;
+}
+
+.time-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.time-value {
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.time-label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 300;
+}
+
+.message {
+  margin-top: 30px;
+  animation: fadeIn 1s ease-out 1s backwards;
+}
+
+.message p {
+  font-size: 1.3rem;
+  color: #ffffff;
+  font-weight: 300;
+  font-style: italic;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.rings-decoration {
+  margin-top: 30px;
+  animation: fadeIn 1s ease-out 1.2s backwards;
+}
+
+.ring {
+  font-size: 2.5rem;
+  animation: rotate 3s linear infinite;
+  display: inline-block;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .wedding-title {
+    font-size: 3rem;
+  }
+
+  .couple-names {
+    font-size: 1.8rem;
+  }
+
+  .wedding-date {
+    font-size: 1rem;
+  }
+
+  .countdown-box {
+    min-width: 110px;
+    padding: 20px 15px;
+  }
+
+  .countdown-box.milliseconds {
+    min-width: 130px;
+  }
+
+  .time-value {
+    font-size: 2.5rem;
+  }
+
+  .time-label {
+    font-size: 0.75rem;
+  }
+
+  .message p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .wedding-title {
+    font-size: 2.5rem;
+  }
+
+  .couple-names {
+    font-size: 1.5rem;
+  }
+
+  .countdown-wrapper {
+    gap: 15px;
+  }
+
+  .countdown-box {
+    min-width: 90px;
+    padding: 15px 10px;
+  }
+
+  .countdown-box.milliseconds {
+    min-width: 110px;
+  }
+
+  .time-value {
+    font-size: 2rem;
+  }
+
+  .heart {
+    font-size: 1.5rem;
+  }
+
+  .ring {
+    font-size: 2rem;
+  }
+}
