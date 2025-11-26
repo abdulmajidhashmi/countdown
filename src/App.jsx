@@ -51,7 +51,7 @@ const App = () => {
           <span className="heart">❤</span>
         </div>
 
-        <h1 className="wedding-title">Our Wedding Day</h1>
+        <h1 className="wedding-title">Nikah Day</h1>
         <p className="couple-names">Zahid & Alvina</p>
         <p className="wedding-date">December 5, 2025</p>
 
